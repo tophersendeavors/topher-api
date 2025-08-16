@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Canonical -->
+<link rel="canonical" href="https://www.topherai.com/" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload a key hero image (optional but nice) -->
+  <link rel="preload" as="image" href="/assets/hero-thumb.jpg">
+  
+<!-- Primary SEO -->
+<title>TopherAI — AI Chatbots, AI Receptionists &amp; Video Ambassadors | Kingman, AZ</title>
+<meta name="description" content="TopherAI deploys AI chatbots, AI voice receptionists, and on-site video ambassadors that greet visitors, answer questions, and book appointments 24/7. Clear setup, fast results.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#2f6af1">
+
+
+<!-- Open Graph (iMessage, WhatsApp, Facebook, Slack, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TopherAI">
+<meta property="og:url" content="https://www.topherai.com/">
+
+<meta property="og:title" content="Turn visitors into booked appointments">
+<meta property="og:description" content="Website Chatbot • AI Receptionist • Video Ambassador.">
+<meta property="og:image" content="https://www.topherai.com/assets/og-topherai.png">
+<meta property="og:image:secure_url" content="https://www.topherai.com/assets/og-topherai.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TopherAI — Chatbot, AI Receptionist, and Video Ambassador">
+
+<!-- Optional video (many platforms ignore autoplay; keep image regardless) -->
+<meta property="og:video" content="https://www.topherai.com/assets/hero-interactive.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1200">
+<meta property="og:video:height" content="630">
+
+<!-- Twitter (X) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turn visitors into booked appointments">
+<meta name="twitter:description" content="Website Chatbot • AI Receptionist • Video Ambassador.">
+<meta name="twitter:image" content="https://www.topherai.com/assets/og-topherai.png">
+<meta name="twitter:image:alt" content="TopherAI — Chatbot, AI Receptionist, and Video Ambassador">
+<meta name="twitter:site" content="@topher_ai">
+
+<!-- Nice-to-have -->
+<meta name="theme-color" content="#2f6af1">
+<link rel="icon" href="/assets/favicon.ico">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "TopherAI",
+    "url": "https://www.topherai.com/",
+    "logo": "https://www.topherai.com/assets/og-topherai.png",
+    "image": "https://www.topherai.com/assets/og-topherai.png",
+    "description": "AI chatbots, AI voice receptionists, and on-site video ambassadors that greet visitors, answer questions, and book appointments 24/7.",
+    "areaServed": "Kingman, AZ",
+    "telephone": ""
+  }
+  </script>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:{50:'#eef5ff',100:'#dae7ff',200:'#b6cfff',300:'#8cb2ff',400:'#5b8eff',500:'#2f6af1',600:'#1f53c9',700:'#1741a0',800:'#112f77',900:'#0c235a'}
+          },
+          boxShadow:{ soft:'0 10px 30px rgba(17,24,39,.08)'}
+        }
+      }
+    }
+  </script>
+<style>
+    html{scroll-behavior:smooth}
+    :focus-visible{outline:3px solid #2f6af1;outline-offset:2px}
+  </style>
+<style>
+.glass-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.3s ease;
+}
+.glass-button.blue { background-color: rgba(0, 123, 255, 0.4); }
+.glass-button.green { background-color: rgba(40, 167, 69, 0.4); }
+.glass-button.orange { background-color: rgba(255, 140, 0, 0.4); }
+.glass-button:hover { background: rgba(255, 255, 255, 0.3); }
+</style>
+<style>
+  /* Keep modal video sizing sane */
+  #overviewModal video { width: 100%; height: auto; display: block; }
+
+  /* Frosted glass card (already referenced by your overlay container) */
+  .glass {
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+  }
+
+  /* Colored glass buttons for overlays */
+  .overlay-btn {
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: .9rem;
+    padding: .6rem 1rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.35);
+    transition: background .2s ease, transform .08s ease;
+  }
+  .overlay-btn:active { transform: translateY(1px); }
+  .overlay-primary { background: rgba(47,106,241,.72); }  /* blue */
+  .overlay-primary:hover { background: rgba(47,106,241,.90); }
+  .overlay-teal    { background: rgba(13,148,136,.72); }  /* teal */
+  .overlay-teal:hover    { background: rgba(13,148,136,.90); }
+  .overlay-violet  { background: rgba(124,58,237,.72); }  /* violet */
+  .overlay-violet:hover  { background: rgba(124,58,237,.90); }
+  .overlay-amber   { background: rgba(217,119,6,.72); }   /* amber (for Pricing) */
+  .overlay-amber:hover   { background: rgba(217,119,6,.90); }
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+<!-- Announcement -->
+<div class="bg-brand-50 text-brand-800 text-sm py-2 text-center px-4">
+<strong>Kingman Special:</strong> 14-day pilot. If we don’t book you 5+ extra appointments, you pay $0.
+  </div>
+<!-- Header -->
+<header class="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-gray-100">
+<div class="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+<a aria-label="TopherAI Home" class="flex items-center gap-3" href="#home">
+<img alt="TopherAI logo" class="h-9 w-9 rounded-xl shadow-soft" src="/assets/TopherAI-IconLogo.png"/>
+<span class="font-semibold tracking-tight text-lg sm:text-xl">TopherAI</span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm">
+<a class="hover:text-brand-700" href="#products">Products</a>
+<a class="hover:text-brand-700" href="#how">How It Works</a>
+<a class="hover:text-brand-700" href="#pricing">Pricing</a>
+<a class="hover:text-brand-700" href="#faq">FAQ</a>
+</nav>
+<a class="px-4 py-2 rounded-xl bg-brand-600 text-white hover:bg-brand-700 shadow-soft" href="#book">Book a Free Demo</a>
+</div>
+</header>
+<!-- HERO -->
+<section class="py-12 sm:py-16" id="home">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid items-center gap-10 lg:grid-cols-2">
+<div>
+<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+          AI Chatbots, AI Receptionists &amp; Video Ambassadors for Local Businesses
+        </h1>
+<p class="mt-4 text-gray-600 max-w-xl">
+          Never miss a customer again. We deploy an <strong>AI Chatbot</strong> for your site, an <strong>AI voice receptionist</strong> for your phone line, and a <strong>Video Ambassador</strong> that greets visitors and guides them to book—<strong>24/7</strong>.
+        </p>
+<ul class="mt-4 text-gray-700 text-sm space-y-1">
+<li>• Chatbot: answers FAQs &amp; guides customers</li>
+<li>• AI Receptionist: takes calls &amp; books appointments</li>
+<li>• Video Ambassador: on-page host that drives action</li>
+</ul>
+<div class="mt-6 flex gap-3 flex-wrap">
+<a class="inline-flex items-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 shadow-soft" href="#book">Book a Free Demo</a>
+<a class="inline-flex items-center px-5 py-3 rounded-2xl border border-gray-200 hover:bg-gray-50" href="#" id="open-overview">Watch 60-Second Overview</a>
+</div>
+<p class="mt-3 text-xs text-gray-500">Serving Kingman, AZ and beyond • Cancel anytime • No long contracts</p>
+</div>
+<!-- Right: clickable preview that opens the glass popup -->
+<div class="rounded-3xl overflow-hidden shadow-soft ring-1 ring-gray-200 bg-white">
+<div class="p-4 border-b">
+<p class="text-sm font-semibold">What you get in 60 seconds</p>
+<p class="text-xs text-gray-500">Overview: Chatbot vs AI Receptionist vs Video Ambassador</p>
+</div>
+<button class="p-0 w-full text-left" id="open-overview-thumb">
+<div class="p-4">
+<div class="relative aspect-video group">
+<img alt="Overview thumbnail" class="w-full h-full object-cover rounded-xl" src="/assets/overview-thumbnail.jpg"/>
+<div class="absolute inset-0 grid place-items-center">
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 text-white text-sm group-hover:bg-black/70">▶ Play Overview</span>
+</div>
+</div>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- PRODUCTS -->
+<section class="py-16 bg-gray-50 border-y border-gray-100" id="products">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-center">Choose what you need (or bundle them)</h2>
+<!-- AI Chatbot -->
+<div class="mt-10 grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-semibold">AI Chatbot — website assistant</h3>
+<p class="mt-2 text-gray-600">Answers FAQs, guides visitors, and nudges them to book or call—right on your website.</p>
+<ul class="mt-4 text-sm text-gray-700 list-disc pl-5 space-y-1">
+<li>Trained on your services, prices &amp; policies</li>
+<li>Lead capture (name, email, phone)</li>
+<li>Pushes to booking or contact</li>
+</ul>
+<div class="mt-5 flex gap-3">
+<a class="px-5 py-3 rounded-2xl border border-gray-200 hover:bg-white" href="#" id="open-chatbot-demo">See Chatbot Demo</a>
+<a class="px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 shadow-soft" href="#pricing">See Pricing</a>
+</div>
+</div>
+<!-- RIGHT: Overview / Live tabs with Chatbase iframe -->
+<div class="rounded-3xl overflow-hidden shadow-soft ring-1 ring-gray-200 bg-white">
+<div class="p-4 border-b">
+<p class="text-sm font-semibold">AI Chatbot — Overview &amp; Live Demo</p>
+<p class="text-xs text-gray-500">Watch the quick explainer, or try the live chatbot below.</p>
+</div>
+<div class="p-4">
+<!-- Tabs -->
+<div class="inline-flex rounded-xl border bg-gray-50 text-sm overflow-hidden">
+<button class="px-4 py-2 font-medium bg-white" id="tabChatbotVideo">Overview</button>
+<button class="px-4 py-2 hover:bg-white/70" id="tabChatbotLive">Try the Chatbot</button>
+</div>
+<!-- Pane: Overview video -->
+<div class="mt-4" id="chatbotVideoPane">
+<div class="aspect-video">
+<video aria-label="Chatbot overview" class="w-full h-full rounded-xl" controls="" playsinline="" poster="/assets/chatbot-thumb.jpg">
+<source src="/assets/chatbot-explainer.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+<!-- Pane: Live Chatbot (inline) -->
+<div class="mt-4 hidden" id="chatbotLivePane">
+<div class="rounded-2xl border overflow-hidden">
+<iframe allow="microphone;" src="https://www.chatbase.co/chatbot-iframe/Ue4QVzxrrFdDH2Gn4N8tU" style="width:100%; height:560px; border:0;" title="TopherAI Live Chatbot">
+</iframe>
+</div>
+<p class="mt-2 text-xs text-gray-500">Tip: This is the same bot your customers will use on your site.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Receptionist -->
+<div class="mt-12 grid lg:grid-cols-2 gap-8 items-center">
+<div class="order-2 lg:order-1 rounded-3xl overflow-hidden shadow-soft ring-1 ring-gray-200 bg-white">
+<div class="p-4 border-b">
+<p class="text-sm font-semibold">AI Receptionist (voice) sample</p>
+</div>
+<div class="p-4">
+<div class="aspect-video">
+<video class="w-full h-full rounded-xl" controls="" playsinline="" poster="/assets/voice-thumb.jpg">
+<source src="/assets/voice-receptionist.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h3 class="text-2xl font-semibold">AI Receptionist — phone line</h3>
+<p class="mt-2 text-gray-600">Answers calls, books appointments, and handles FAQs with a natural, friendly voice.</p>
+<ul class="mt-4 text-sm text-gray-700 list-disc pl-5 space-y-1">
+<li>Missed-call text-back in seconds</li>
+<li>Calendar integration for instant booking</li>
+<li>Voicemail to text &amp; email</li>
+</ul>
+<div class="mt-5 flex gap-3">
+<a class="px-5 py-3 rounded-2xl border border-gray-200 hover:bg-white" href="#" id="open-voice-demo">Hear It in Action</a>
+<a class="px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 shadow-soft" href="#pricing">See Pricing</a>
+</div>
+</div>
+</div>
+<!-- Video Ambassador -->
+<div class="mt-12 grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-semibold">Video Ambassador — on-page host</h3>
+<p class="mt-2 text-gray-600">A friendly, on-site spokesperson who welcomes visitors, explains your services, and drives action.</p>
+<ul class="mt-4 text-sm text-gray-700 list-disc pl-5 space-y-1">
+<li>Custom script + branded avatar (or real spokesperson)</li>
+<li>Clickable CTAs (Services, Pricing, Book Now)</li>
+<li>Pairs perfectly with your Chatbot</li>
+</ul>
+<div class="mt-5 flex gap-3">
+<a class="px-5 py-3 rounded-2xl border border-gray-200 hover:bg-white" href="#" id="open-ambassador-demo">See Live Ambassador Demo</a>
+<a class="px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 shadow-soft" href="#pricing">See Pricing</a>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-soft ring-1 ring-gray-200 bg-white">
+<div class="p-4 border-b">
+<p class="text-sm font-semibold">On-page example (30s)</p>
+<p class="text-xs text-gray-500">Fictional BrightPath demo (non-interactive)</p>
+</div>
+<div class="p-4">
+<div class="aspect-video">
+<video class="w-full h-full rounded-xl" controls="" playsinline="" poster="/assets/ambassador-thumb.jpg">
+<source src="/assets/video-ambassador.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- What we set up for you -->
+<section class="py-16 sm:py-20" id="solutions">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl sm:text-4xl font-bold tracking-tight">What we set up for you</h2>
+<p class="mt-3 text-gray-600 max-w-2xl">Simple, reliable automation that pays for itself by capturing the customers you’re currently losing.</p>
+<div class="mt-10 grid md:grid-cols-3 gap-6">
+<div class="p-6 rounded-3xl border border-gray-100 shadow-soft">
+<h3 class="font-semibold text-lg">AI Website Chatbot</h3>
+<p class="text-gray-600 mt-2">Answers FAQs, captures leads, and books into your calendar. Works on any website.</p>
+<ul class="mt-4 space-y-2 text-sm text-gray-600 list-disc pl-4">
+<li>Fast chat responses, friendly tone</li>
+<li>Lead capture (name, email, phone)</li>
+<li>Calendly/Google Calendar integration</li>
+</ul>
+</div>
+<div class="p-6 rounded-3xl border border-gray-100 shadow-soft">
+<h3 class="font-semibold text-lg">AI Voice Receptionist</h3>
+<p class="text-gray-600 mt-2">If you miss a call, customers get handled by a voice agent so you never lose the lead.</p>
+<ul class="mt-4 space-y-2 text-sm text-gray-600 list-disc pl-4">
+<li>10-second missed-call text-back</li>
+<li>Qualifies the lead and books a time</li>
+<li>Owner notifications</li>
+</ul>
+</div>
+<div class="p-6 rounded-3xl border border-gray-100 shadow-soft">
+<h3 class="font-semibold text-lg">Video Ambassador</h3>
+<p class="text-gray-600 mt-2">A human-style guide who welcomes visitors and points them to actions that convert.</p>
+<ul class="mt-4 space-y-2 text-sm text-gray-600 list-disc pl-4">
+<li>Scripted intro, branded look</li>
+<li>Clickable CTAs</li>
+<li>Monthly performance insights</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- How it works -->
+<section class="py-16" id="how">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-center">How it works (pick one or bundle them)</h2>
+<div class="mt-10 grid md:grid-cols-4 gap-6 text-center">
+<div class="p-6 rounded-2xl border">
+<p class="text-xl">1. Discover</p>
+<p class="mt-2 text-gray-600 text-sm">Free consult to map your needs (chatbot, voice, ambassador—or all).</p>
+</div>
+<div class="p-6 rounded-2xl border">
+<p class="text-xl">2. Build</p>
+<p class="mt-2 text-gray-600 text-sm">We configure your chosen product(s) and tailor responses/scripts.</p>
+</div>
+<div class="p-6 rounded-2xl border">
+<p class="text-xl">3. Launch</p>
+<p class="mt-2 text-gray-600 text-sm">Embed on your site / connect your phone line; we monitor and tune.</p>
+</div>
+<div class="p-6 rounded-2xl border">
+<p class="text-xl">4. Grow</p>
+<p class="mt-2 text-gray-600 text-sm">Weekly lead reports and conversion tweaks.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =================== PRICING =================== -->
+<section id="pricing" class="py-24 bg-gradient-to-b from-brand-50/60 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Simple, usage-aware pricing</h2>
+      <p class="mt-4 text-gray-600">Per location/site. Includes generous usage with fair overages.</p>
+      <p class="mt-1 text-sm text-gray-500">Setup fee <strong>$199</strong> — <span class="text-brand-700">waived with annual prepay (2 months free)</span>.</p>
+      <p class="mt-3 text-sm text-gray-500">Prefer to start now? Click <strong>Start 14-Day Pilot</strong>, or book a demo first and we’ll launch the pilot right after.</p>
+    </header>
+
+    <!-- Equal-height cards & aligned CTAs -->
+    <div class="mt-12 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr items-stretch">
+
+      <!-- Chatbot — Starter -->
+      <div class="p-8 rounded-3xl border border-gray-200 bg-white shadow-[0_10px_30px_rgba(17,24,39,.08)] hover:-translate-y-0.5 transition-transform h-full flex flex-col">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-teal-700 bg-teal-100">Chatbot</span>
+        <h3 class="mt-4 text-xl font-extrabold">Starter</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$299</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per site. 300 AI resolutions included.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Lead capture + email notifications</li>
+          <li>1 knowledge base; FAQ training</li>
+          <li>Calendar booking (+$49) • CRM push (+$49)</li>
+        </ul>
+        <!-- Footnotes ABOVE the buttons so alignment stays perfect -->
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Overage: $0.50 per additional AI resolution.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for Chatbot Starter">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for Chatbot Starter">Book a Free Demo</a>
+        </div>
+      </div>
+
+      <!-- AI Receptionist — Phone Pro -->
+      <div class="p-8 rounded-3xl border border-gray-200 bg-white shadow-[0_10px_30px_rgba(17,24,39,.08)] hover:-translate-y-0.5 transition-transform h-full flex flex-col">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-violet-700 bg-violet-100">AI Receptionist</span>
+        <h3 class="mt-4 text-xl font-extrabold">Phone Pro</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$449</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per location. Includes 100 connected minutes.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Local phone number + after-hours routing</li>
+          <li>Voicemail to text • lead intake & booking</li>
+          <li>Business hours & escalation rules</li>
+        </ul>
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Overage: $0.18 per connected minute.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for AI Receptionist Phone Pro">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for AI Receptionist Phone Pro">Book a Free Demo</a>
+        </div>
+      </div>
+
+      <!-- Video Ambassador — Showcase -->
+      <div class="p-8 rounded-3xl border border-gray-200 bg-white shadow-[0_10px_30px_rgba(17,24,39,.08)] hover:-translate-y-0.5 transition-transform h-full flex flex-col">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-amber-800 bg-amber-100">Video Ambassador</span>
+        <h3 class="mt-4 text-xl font-extrabold">Showcase</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$199</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per site. 1 persona • 3 scenes.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Hosting & analytics included</li>
+          <li>CTA buttons + script rotation</li>
+          <li>Add scenes or personas: +$49 each</li>
+        </ul>
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Great for product/service explainers.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for Video Ambassador Showcase">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for Video Ambassador Showcase">Book a Free Demo</a>
+        </div>
+      </div>
+
+      <!-- Suite — Best Value -->
+      <div class="relative p-8 rounded-3xl border bg-white shadow-[0_10px_30px_rgba(17,24,39,.12)] ring-2 ring-brand-300 hover:shadow-[0_14px_40px_rgba(17,24,39,.12)] hover:-translate-y-1 transition-transform h-full flex flex-col">
+        <span class="absolute -top-3 left-6 inline-flex items-center px-2 py-1 text-[11px] rounded-full bg-brand-100 text-brand-800 font-semibold shadow">Best Value</span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-brand-700 bg-brand-100">Suite</span>
+        <h3 class="mt-4 text-xl font-extrabold">Chatbot + Receptionist + Video</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$699</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per location/site bundle.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Chatbot: 300 AI resolutions included</li>
+          <li>Voice: 200 connected minutes included</li>
+          <li>Video: 1 persona • 3 scenes • hosting & analytics</li>
+        </ul>
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Overages billed at plan rates.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for the Suite">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for the Suite">Book a Free Demo</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 text-xs text-gray-500 max-w-3xl mx-auto">
+      <p><strong>Notes:</strong> “AI resolution” = a conversation the chatbot handles without human takeover. “Connected minute” = time the AI receptionist is on an answered call. Usage resets monthly. Cancel anytime. Setup fee <strong>$199</strong> (waived with annual prepay; annual = 2 months free).</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PRICING =================== -->
+<section id="pricing" class="py-24 bg-gradient-to-b from-brand-50/60 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Simple, usage-aware pricing</h2>
+      <p class="mt-4 text-gray-600">Per location/site. Includes generous usage with fair overages.</p>
+      <p class="mt-1 text-sm text-gray-500">Setup fee <strong>$199</strong> — <span class="text-brand-700">waived with annual prepay (2 months free)</span>.</p>
+      <p class="mt-3 text-sm text-gray-500">Prefer to start now? Click <strong>Start 14-Day Pilot</strong>, or book a demo first and we’ll launch the pilot right after.</p>
+    </header>
+
+    <!-- Equal-height cards & aligned CTAs -->
+    <div class="mt-12 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr items-stretch">
+
+      <!-- Chatbot — Starter -->
+      <div class="p-8 rounded-3xl border border-gray-200 bg-white shadow-[0_10px_30px_rgba(17,24,39,.08)] hover:-translate-y-0.5 transition-transform h-full flex flex-col">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-teal-700 bg-teal-100">Chatbot</span>
+        <h3 class="mt-4 text-xl font-extrabold">Starter</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$299</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per site. 300 AI resolutions included.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Lead capture + email notifications</li>
+          <li>1 knowledge base; FAQ training</li>
+          <li>Calendar booking (+$49) • CRM push (+$49)</li>
+        </ul>
+        <!-- Footnotes ABOVE the buttons so alignment stays perfect -->
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Overage: $0.50 per additional AI resolution.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for Chatbot Starter">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for Chatbot Starter">Book a Free Demo</a>
+        </div>
+      </div>
+
+      <!-- AI Receptionist — Phone Pro -->
+      <div class="p-8 rounded-3xl border border-gray-200 bg-white shadow-[0_10px_30px_rgba(17,24,39,.08)] hover:-translate-y-0.5 transition-transform h-full flex flex-col">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-violet-700 bg-violet-100">AI Receptionist</span>
+        <h3 class="mt-4 text-xl font-extrabold">Phone Pro</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$449</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per location. Includes 100 connected minutes.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Local phone number + after-hours routing</li>
+          <li>Voicemail to text • lead intake & booking</li>
+          <li>Business hours & escalation rules</li>
+        </ul>
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Overage: $0.18 per connected minute.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for AI Receptionist Phone Pro">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for AI Receptionist Phone Pro">Book a Free Demo</a>
+        </div>
+      </div>
+
+      <!-- Video Ambassador — Showcase -->
+      <div class="p-8 rounded-3xl border border-gray-200 bg-white shadow-[0_10px_30px_rgba(17,24,39,.08)] hover:-translate-y-0.5 transition-transform h-full flex flex-col">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-amber-800 bg-amber-100">Video Ambassador</span>
+        <h3 class="mt-4 text-xl font-extrabold">Showcase</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$199</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per site. 1 persona • 3 scenes.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Hosting & analytics included</li>
+          <li>CTA buttons + script rotation</li>
+          <li>Add scenes or personas: +$49 each</li>
+        </ul>
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Great for product/service explainers.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for Video Ambassador Showcase">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for Video Ambassador Showcase">Book a Free Demo</a>
+        </div>
+      </div>
+
+      <!-- Suite — Best Value -->
+      <div class="relative p-8 rounded-3xl border bg-white shadow-[0_10px_30px_rgba(17,24,39,.12)] ring-2 ring-brand-300 hover:shadow-[0_14px_40px_rgba(17,24,39,.12)] hover:-translate-y-1 transition-transform h-full flex flex-col">
+        <span class="absolute -top-3 left-6 inline-flex items-center px-2 py-1 text-[11px] rounded-full bg-brand-100 text-brand-800 font-semibold shadow">Best Value</span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ring-1 ring-black/5 text-brand-700 bg-brand-100">Suite</span>
+        <h3 class="mt-4 text-xl font-extrabold">Chatbot + Receptionist + Video</h3>
+        <div class="mt-4">
+          <span class="text-4xl font-extrabold tracking-tight">$699</span><span class="text-gray-600">/mo</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Per location/site bundle.</p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>Chatbot: 300 AI resolutions included</li>
+          <li>Voice: 200 connected minutes included</li>
+          <li>Video: 1 persona • 3 scenes • hosting & analytics</li>
+        </ul>
+        <div class="mt-6 text-xs text-gray-500 space-y-1">
+          <p>Overages billed at plan rates.</p>
+          <p>Includes a 14-day pilot after the demo.</p>
+        </div>
+        <div class="mt-auto pt-6 space-y-3">
+          <a href="#start" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 transition-colors" aria-label="Start 14-day pilot for the Suite">Start 14-Day Pilot</a>
+          <a href="#book" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 transition-colors" aria-label="Book a free demo for the Suite">Book a Free Demo</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 text-xs text-gray-500 max-w-3xl mx-auto">
+      <p><strong>Notes:</strong> “AI resolution” = a conversation the chatbot handles without human takeover. “Connected minute” = time the AI receptionist is on an answered call. Usage resets monthly. Cancel anytime. Setup fee <strong>$199</strong> (waived with annual prepay; annual = 2 months free).</p>
+    </div>
+  </div>
+</section>
+<!-- =============== /PRICING =============== -->
+
+<!-- =================== START (Signup) =================== -->
+<section id="start" class="py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="text-center mb-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Start your 14-day pilot</h2>
+      <p class="mt-3 text-gray-600">No charge today. We’ll collect a payment method and your pilot begins after the demo or immediately if you’d like.</p>
+    </header>
+
+    <form id="start-form" class="bg-white rounded-3xl border border-gray-200 shadow-[0_10px_30px_rgba(17,24,39,.08)] p-6 sm:p-8">
+      <fieldset>
+        <legend class="text-sm font-semibold text-gray-700">Choose a plan</legend>
+        <div class="mt-3 grid sm:grid-cols-2 gap-3" id="plan-options">
+          <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">
+            <input class="peer" type="radio" name="plan" value="chatbot" checked>
+            <div>
+              <div class="font-semibold">Chatbot — Starter</div>
+              <div class="text-sm text-gray-600">$299/mo • 300 AI resolutions</div>
+            </div>
+          </label>
+          <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">
+            <input class="peer" type="radio" name="plan" value="receptionist">
+            <div>
+              <div class="font-semibold">AI Receptionist — Phone Pro</div>
+              <div class="text-sm text-gray-600">$449/mo • 100 minutes included</div>
+            </div>
+          </label>
+          <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">
+            <input class="peer" type="radio" name="plan" value="video">
+            <div>
+              <div class="font-semibold">Video Ambassador — Showcase</div>
+              <div class="text-sm text-gray-600">$199/mo • 1 persona, 3 scenes</div>
+            </div>
+          </label>
+          <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:bg-gray-50">
+            <input class="peer" type="radio" name="plan" value="suite">
+            <div>
+              <div class="font-semibold">Suite — Best Value</div>
+              <div class="text-sm text-gray-600">$699/mo • Chatbot + Receptionist + Video</div>
+            </div>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="mt-8 grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm text-gray-700">Full name</label>
+          <input name="name" required class="mt-1 w-full border rounded-xl px-3 py-2" placeholder="Jane Smith">
+        </div>
+        <div>
+          <label class="text-sm text-gray-700">Work email</label>
+          <input type="email" name="email" required class="mt-1 w-full border rounded-xl px-3 py-2" placeholder="jane@business.com">
+        </div>
+        <div>
+          <label class="text-sm text-gray-700">Phone</label>
+          <input name="phone" class="mt-1 w-full border rounded-xl px-3 py-2" placeholder="(555) 555-5555">
+        </div>
+        <div>
+          <label class="text-sm text-gray-700">Business name</label>
+          <input name="business" class="mt-1 w-full border rounded-xl px-3 py-2" placeholder="Kingman Dental">
+        </div>
+        <div class="sm:col-span-2">
+          <label class="text-sm text-gray-700">Website</label>
+          <input name="website" class="mt-1 w-full border rounded-xl px-3 py-2" placeholder="https://example.com">
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <button id="start-submit" type="submit" class="inline-flex justify-center px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700">
+          Start 14-Day Pilot
+        </button>
+        <a href="#book" class="inline-flex justify-center px-5 py-3 rounded-2xl border border-brand-200 bg-white text-brand-700 hover:bg-brand-50">
+          Book a Free Demo
+        </a>
+      </div>
+
+      <p id="start-help" class="mt-4 text-xs text-gray-500">
+        By starting the pilot you agree to our Terms. Stripe will securely collect your payment method; you won’t be charged until the trial ends.
+      </p>
+    </form>
+  </div>
+</section>
+<!-- ================= /START ================= -->
+<script>
+(function(){
+  function getPlanFromURL(){
+    const hash = location.hash || "";
+    const m1 = hash.match(/plan=([a-z]+)/i);
+    if (m1) return m1[1].toLowerCase();
+    const qs = new URLSearchParams(location.search);
+    if (qs.get("plan")) return qs.get("plan").toLowerCase();
+    return null;
+  }
+  function selectPlan(slug){
+    if (!slug) return;
+    const input = document.querySelector('input[name="plan"][value="'+slug+'"]');
+    if (input) input.checked = true;
+  }
+  document.addEventListener("click", (e)=>{
+    const a = e.target.closest('a[href^="#start"]');
+    if (!a) return;
+    const href = a.getAttribute("href") || "";
+    const m = href.match(/plan=([a-z]+)/i);
+    if (m) { selectPlan(m[1].toLowerCase()); return; }
+    const card = a.closest("div.p-8");
+    const label = card?.querySelector("span.inline-flex")?.textContent?.toLowerCase() || "";
+    if (label.includes("chatbot")) selectPlan("chatbot");
+    else if (label.includes("receptionist")) selectPlan("receptionist");
+    else if (label.includes("video")) selectPlan("video");
+    else if (label.includes("suite")) selectPlan("suite");
+  });
+  selectPlan(getPlanFromURL());
+  const form = document.getElementById("start-form");
+  form?.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const btn = document.getElementById("start-submit");
+    btn.disabled = true; btn.textContent = "Creating your session…";
+    const data = Object.fromEntries(new FormData(form).entries());
+    try{
+      const res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Unable to start session");
+      if (json.url) { location.href = json.url; return; }
+      if (json.id) { location.href = "/start-success?session_id=" + encodeURIComponent(json.id); return; }
+      throw new Error("No Checkout URL received");
+    }catch(err){
+      alert(err.message || "Something went wrong. Please try again.");
+    }finally{
+      btn.disabled = false; btn.textContent = "Start 14-Day Pilot";
+    }
+  });
+})();
+</script>
+
+
+<!-- Testimonials -->
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl sm:text-4xl font-bold tracking-tight">What local owners say</h2>
+<div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+<figure class="p-6 rounded-3xl border bg-white shadow-soft">
+<blockquote class="text-gray-700">“We booked 9 extra tire installs in week one—worth it already.”</blockquote>
+<figcaption class="mt-4 text-gray-500">— Auto Shop Owner, Kingman</figcaption>
+</figure>
+<figure class="p-6 rounded-3xl border bg-white shadow-soft">
+<blockquote class="text-gray-700">“After-hours calls aren’t lost anymore. Customers love the fast texts.”</blockquote>
+<figcaption class="mt-4 text-gray-500">— Roofing Contractor</figcaption>
+</figure>
+<figure class="p-6 rounded-3xl border bg-white shadow-soft">
+<blockquote class="text-gray-700">“Setup was fast and painless. The bot sounds like our team.”</blockquote>
+<figcaption class="mt-4 text-gray-500">— Med Spa Manager</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-16 bg-gray-50" id="faq">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold">Frequently asked questions</h2>
+<div class="mt-8 grid sm:grid-cols-2 gap-6 text-sm">
+<details class="p-5 rounded-2xl bg-white border shadow-soft">
+<summary class="font-semibold cursor-pointer">How fast can we go live?</summary>
+<p class="mt-3 text-gray-600">Typically within 48 hours once we have your FAQ, hours, and booking link.</p>
+</details>
+<details class="p-5 rounded-2xl bg-white border shadow-soft">
+<summary class="font-semibold cursor-pointer">Does it work after hours?</summary>
+<p class="mt-3 text-gray-600">Yes. Your solutions work 24/7 and capture leads while you sleep.</p>
+</details>
+<details class="p-5 rounded-2xl bg-white border shadow-soft">
+<summary class="font-semibold cursor-pointer">Can we customize how it answers?</summary>
+<p class="mt-3 text-gray-600">Absolutely. We train it on your exact info and update it anytime.</p>
+</details>
+<details class="p-5 rounded-2xl bg-white border shadow-soft">
+<summary class="font-semibold cursor-pointer">Do you serve outside Kingman?</summary>
+<p class="mt-3 text-gray-600">Yes. We serve clients anywhere in the U.S., with priority support for local businesses.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- Book -->
+<section class="py-16" id="book">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="p-8 rounded-3xl border bg-white shadow-soft">
+<h2 class="text-3xl font-bold">Book your free demo</h2>
+<p class="mt-2 text-gray-600">Pick a time that works. We’ll show you the Chatbot, AI Receptionist, and Video Ambassador, then launch a 14-day pilot.</p>
+<div class="mt-6 bg-gray-50 border rounded-2xl p-2">
+<!-- Calendly inline -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/topher-ai/15min" style="min-width:320px;height:700px;"></div>
+<script async="" src="https://assets.calendly.com/assets/external/widget.js"></script>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="border-t border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-6 text-sm">
+<div class="">
+<div class="flex items-center gap-3">
+<img alt="TopherAI logo" class="h-8 w-8 rounded-lg" src="/assets/TopherAI-IconLogo.png"/>
+<span class="font-semibold">TopherAI</span>
+</div>
+<p class="mt-3 text-gray-600">AI chatbots, AI receptionists, and video ambassadors for local businesses. Kingman, AZ.</p>
+</div>
+<div class="md:col-span-2 grid sm:grid-cols-3 gap-6">
+<div>
+<p class="font-semibold">Company</p>
+<ul class="mt-2 space-y-2">
+<li><a class="hover:underline" href="#products">Products</a></li>
+<li><a class="hover:underline" href="#pricing">Pricing</a></li>
+<li><a class="hover:underline" href="#faq">FAQ</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold">Contact</p>
+<ul class="mt-2 space-y-2 text-gray-600">
+<li><a class="hover:underline" href="mailto:hello@topherai.com">hello@topherai.com</a></li>
+<li><a class="hover:underline" href="tel:+12135000605">(213) 500-0605</a></li>
+<li>Mon–Fri 9–6 • Sat 10–2</li>
+</ul>
+</div>
+<div>
+<p class="font-semibold">Legal</p>
+<ul class="mt-2 space-y-2 text-gray-600">
+<li><a class="hover:underline" href="/privacy.html">Privacy Policy</a></li>
+<li><a class="hover:underline" href="/terms.html">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 py-6 text-center text-xs text-gray-500">© <span id="year"></span> TopherAI. All rights reserved.</div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<!-- ============== Glass Overview Modal ============== -->
+<style>
+    .glass { background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.25);
+      box-shadow: 0 20px 50px rgba(0,0,0,.15);
+      backdrop-filter: blur(18px) saturate(120%);
+      -webkit-backdrop-filter: blur(18px) saturate(120%); }
+  </style>
+<div class="fixed inset-0 z-[100] hidden" id="overviewModal">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm" data-close="1"></div>
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<div class="relative w-full max-w-4xl rounded-2xl glass overflow-hidden">
+<div class="flex items-center justify-between px-5 py-3 border-b border-white/20 bg-white/5">
+<h3 class="text-lg font-semibold">Overview: Chatbot vs AI Receptionist vs Video Ambassador</h3>
+<button aria-label="Close" class="p-2 hover:bg-white/20" data-close="1">✕</button>
+</div>
+
+<div class="p-4 bg-white/5">
+  <div class="relative">
+    <!-- Video -->
+    <video
+      id="overviewVideo"
+      class="w-full h-auto block rounded-xl"
+      controls
+      playsinline
+      muted
+      preload="metadata"
+      poster="/assets/overview-thumb.jpg"
+      aria-label="Overview video"
+    >
+      <source src="/assets/hero-interactive.mp4" type="video/mp4"/>
+    </video>
+
+    <!-- Interactive overlay (hidden until cues) -->
+    <div id="videoOverlay" class="absolute inset-0 hidden">
+      <!-- pb-16 lifts buttons above the player bar -->
+      <div class="absolute inset-0 grid place-items-center p-4 pb-16">
+        <div class="w-full max-w-xl glass rounded-2xl p-4">
+          <p class="text-black font-semibold text-center mb-3" id="overlayQuestion">
+            What would you like to explore?
+          </p>
+          <div id="overlayButtons" class="flex flex-wrap gap-3 justify-center">
+            <!-- Buttons injected by JS -->
+          </div>
+          <p class="text-[11px] text-white/70 text-center mt-3">You can switch topics anytime.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============== Modal + Tabs Scripts ============== -->
+<script>
+  (function(){
+    // Openers for overview (button + thumbnail)
+    const openers = [document.getElementById('open-overview'), document.getElementById('open-overview-thumb')].filter(Boolean);
+    const overviewModal = document.getElementById('overviewModal');
+    function openOverview(e){ if(e) e.preventDefault(); overviewModal.classList.remove('hidden'); document.documentElement.classList.add('overflow-y-hidden'); }
+    openers.forEach(btn=> btn.addEventListener('click', openOverview));
+    function closeModal(modal){
+      modal.classList.add('hidden');
+      document.documentElement.classList.remove('overflow-y-hidden');
+      modal.querySelectorAll('video').forEach(v=>{ try{ v.pause(); }catch(_){}});
+    }
+    document.querySelectorAll('[data-close]').forEach(el=> el.addEventListener('click', ()=> closeModal(el.closest('[id$="Modal"]')) ));
+    window.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape'){ document.querySelectorAll('[id$="Modal"]').forEach(m=> !m.classList.contains('hidden') && closeModal(m)); }
+    });
+
+    // Chatbot tabs
+    const tabVideo = document.getElementById('tabChatbotVideo');
+    const tabLive  = document.getElementById('tabChatbotLive');
+    const paneVideo = document.getElementById('chatbotVideoPane');
+    const paneLive  = document.getElementById('chatbotLivePane');
+    function activate(which){
+      const isVideo = which === 'video';
+      if (paneVideo && paneLive) {
+        paneVideo.classList.toggle('hidden', !isVideo);
+        paneLive.classList.toggle('hidden',  isVideo);
+      }
+      if (tabVideo && tabLive) {
+        tabVideo.classList.toggle('bg-white', isVideo);
+        tabVideo.classList.toggle('hover:bg-white/70', !isVideo);
+        tabLive.classList.toggle('bg-white', !isVideo);
+        tabLive.classList.toggle('hover:bg-white/70', isVideo);
+      }
+    }
+    if (tabVideo && tabLive) {
+      tabVideo.addEventListener('click', (e)=>{ e.preventDefault(); activate('video'); });
+      tabLive .addEventListener('click', (e)=>{ e.preventDefault(); activate('live');  });
+      activate('video');
+    }
+  })();
+  </script>
+<script>
+  (function(){
+    if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+      window.chatbase=(...args)=>{(window.chatbase.q ||= []).push(args)};
+      window.chatbase=new Proxy(window.chatbase,{get(t,p){if(p==="q") return t.q; return(...a)=>t(p,...a)}});
+    }
+    const onLoad=function(){
+      const s=document.createElement("script");
+      s.src="https://www.chatbase.co/embed.min.js";
+      s.id="Ue4QVzxrrFdDH2Gn4N8tU"; // <-- replace with your real chatbotId if different
+      s.domain="www.chatbase.co";
+      document.body.appendChild(s);
+    };
+    if(document.readyState==="complete"){ onLoad(); } else { window.addEventListener("load", onLoad); }
+  })();
+  </script>
+
+<script>
+(function(){
+  const modal   = document.getElementById('overviewModal');
+  const v       = document.getElementById('overviewVideo');
+  const overlay = document.getElementById('videoOverlay');
+  const q       = document.getElementById('overlayQuestion');
+  const btns    = document.getElementById('overlayButtons');
+  const titleEl = modal?.querySelector('h3');
+
+  if (!modal || !v || !overlay || !q || !btns) return;
+
+  // Map each demo to its file + poster
+  const VIDEO_LIBRARY = {
+    overview:     { src: '/assets/hero-interactive.mp4',    poster: '/assets/overview-thumb.jpg',   title: 'Overview: Chatbot vs AI Receptionist vs Video Ambassador' },
+    chatbot:      { src: '/assets/chatbot-explainer.mp4',    poster: '/assets/chatbot-thumb.jpg',    title: 'AI Chatbot — overview' },
+    receptionist: { src: '/assets/voice-receptionist.mp4',   poster: '/assets/voice-thumb.jpg',      title: 'AI Receptionist — sample' },
+    ambassador:   { src: '/assets/video-ambassador.mp4',     poster: '/assets/ambassador-thumb.jpg', title: 'Video Ambassador — demo' },
+  };
+
+  let currentKey = 'overview';
+  let endFired   = false;
+
+  function hideOverlay(){ overlay.classList.add('hidden'); }
+  function showOverlay(){ overlay.classList.remove('hidden'); }
+
+  function makeBtn(label, style, onClick){
+    const el = document.createElement('button');
+    el.className = `overlay-btn ${style}`;
+    el.textContent = label;
+    el.addEventListener('click', onClick, { once: true });
+    return el;
+  }
+
+  // The same choice menu is reused at the end of every video
+  function buildChoiceMenu(title='What would you like to watch next?'){
+    q.textContent = title;
+    btns.innerHTML = '';
+    btns.appendChild(makeBtn('Chatbot',         'overlay-teal',    ()=> loadVideo('chatbot')));
+    btns.appendChild(makeBtn('AI Receptionist', 'overlay-violet',  ()=> loadVideo('receptionist')));
+    btns.appendChild(makeBtn('Video Ambassador','overlay-amber',   ()=> loadVideo('ambassador')));
+    btns.appendChild(makeBtn('Replay Overview', 'overlay-primary', ()=> loadVideo('overview')));
+    showOverlay();
+    try{ v.pause(); }catch(_){}
+  }
+
+  function loadVideo(key){
+    const info = VIDEO_LIBRARY[key];
+    if (!info) return;
+    currentKey = key;
+    endFired = false;
+    hideOverlay();
+
+    const srcEl = v.querySelector('source');
+    if (srcEl) srcEl.src = info.src;
+    if (info.poster) v.setAttribute('poster', info.poster);
+    if (titleEl) titleEl.textContent = info.title;
+
+    try{
+      v.pause();
+      v.load();
+      // User just clicked; browsers allow autoplay-with-sound on user gesture
+      v.muted = false;
+      v.volume = 1.0;
+      v.play().catch(()=>{ /* if it fails, user can tap the native play */ });
+    }catch(_){}
+  }
+
+  // Single opener that always starts on the Overview video
+  window.openOverview = function(e){
+    if (e) e.preventDefault();
+    modal.classList.remove('hidden');
+    document.documentElement.classList.add('overflow-y-hidden');
+    loadVideo('overview');
+  };
+
+  // End-of-video: show the choice menu for more demos
+  v.addEventListener('ended', ()=>{
+    if (!endFired){ endFired = true; buildChoiceMenu(); }
+  });
+  v.addEventListener('loadedmetadata', ()=>{ endFired = false; hideOverlay(); });
+
+  // Make sure both hero triggers use the opener
+  ['open-overview','open-overview-thumb'].forEach(id=>{
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', window.openOverview, { passive: true });
+  });
+
+  // Optional: show the menu if nothing plays after open (uncomment to enable)
+  // setTimeout(()=>{ if (v.paused) buildChoiceMenu('Choose a demo to watch'); }, 1200);
+})();
+</script>
+<script>
+(function(){
+  // Find each section's video reliably without changing your HTML
+  function getVideoFor(key){
+    switch(key){
+      case 'chatbot': {
+        // Ensure the "Overview video" tab is visible in the Chatbot section
+        const videoTab = document.getElementById('tabChatbotVideo');
+        if (videoTab) videoTab.click();
+        return document.querySelector('#chatbotVideoPane video')
+            || document.querySelector('source[src*="/assets/chatbot-explainer.mp4"]')?.parentElement;
+      }
+      case 'voice':
+        return document.querySelector('source[src*="/assets/voice-receptionist.mp4"]')?.parentElement;
+      case 'ambassador':
+        return document.querySelector('source[src*="/assets/video-ambassador.mp4"]')?.parentElement;
+    }
+  }
+
+  function playInPlace(video){
+    if (!video) return;
+
+    // Pause any other playing videos
+    document.querySelectorAll('video').forEach(v => { if (v !== video) { try { v.pause(); } catch(_){} } });
+
+    // Unhide any hidden ancestors (e.g., a hidden tab pane)
+    let node = video;
+    while (node) {
+      if (node.classList && node.classList.contains('hidden')) node.classList.remove('hidden');
+      node = node.parentElement;
+    }
+
+    // Scroll the video into view and play
+    const wrap = video.closest('.aspect-video') || video;
+    try { wrap.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch(_) {}
+
+    try {
+      video.muted = false;
+      video.currentTime = 0;
+      video.play().catch(()=>{ /* If blocked, user can tap native play */ });
+    } catch(_) {}
+  }
+
+  function hook(id, key){
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', (e) => {
+      e.preventDefault();                // stop the jump
+      const vid = getVideoFor(key);      // find the right video for this section
+      playInPlace(vid);                  // reveal + play it right there
+    }, { passive: false });
+  }
+
+  // Wire up the three section buttons
+  hook('open-chatbot-demo', 'chatbot');
+  hook('open-voice-demo', 'voice');
+  hook('open-ambassador-demo', 'ambassador');
+})();
+</script>
+
+</body>
+</html>
