@@ -28,7 +28,7 @@ export default async function handler(req, res) {
       billing_address_collection: "auto",
       allow_promotion_codes: true,
       automatic_tax: { enabled: true },
-      success_url: "https://www.topherai.com/start-success?session_id={CHECKOUT_SESSION_ID}",
+      success_url: "https://www.topherai.com/start-success.html?session_id={CHECKOUT_SESSION_ID}",
       cancel_url:  "https://www.topherai.com/#pricing",
       metadata: { plan, name, email, phone, business, website, source: "site-start" }
     });
