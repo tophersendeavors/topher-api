@@ -23,7 +23,6 @@ export default async function handler(req, res) {
         trial_period_days: 14,
         metadata: { plan, name, email, phone, business, website, source: "site-start" }
       },
-      customer_creation: "always",
       customer_email: email,
       phone_number_collection: { enabled: true },
       billing_address_collection: "auto",
